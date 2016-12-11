@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api_secret_key:@mixpanel.com/api/2.0/jql
+    body:
+      encoding: UTF-8
+      string: script=params%20%3D%20%7B%22from_date%22%3A%222016-12-11%22%2C%22to_date%22%3A%222016-12-11%22%2C%22event_selectors%22%3A%5B%7B%22event%22%3A%22%24campaign_open%22%7D%5D%7D%3B%20function%20main%28%29%7Breturn%20Events%28params%29%7D
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.11.1
+      Date:
+      - Sun, 11 Dec 2016 14:17:20 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - no-cache, no-store
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - X-PINGOTHER,Content-Type,MaxDataServiceVersion,DataServiceVersion,Authorization,X-Requested-With,If-Modified-Since
+    body:
+      encoding: UTF-8
+      string: '[
+      {"name":"$campaign_open","properties":{"campaign_id":239547,"type":"email"}},
+      {"name":"$campaign_open","properties":{"campaign_id":232037,"type":"email"}}
+      ]'
+    http_version:
+  recorded_at: Sun, 11 Dec 2016 14:17:22 GMT
+recorded_with: VCR 3.0.3
